@@ -1,13 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-
-    <TargetFrameworks>net45;net451;net452;net461;netstandard1.5;netstandard2.0</TargetFrameworks>
-
     <Version>0.1.0</Version>
-
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Logger for SqlServer</Description>
+    <Copyright>Copyright Adrián Villafaña</Copyright>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>Adrián Villafaña</Authors>
+    <TargetFrameworks>net45;net451;net452;net461;netstandard1.5;netstandard2.0</TargetFrameworks>
+    <AssemblyName>Spike.Extensions.Logging.Sql</AssemblyName>
+    <PackageId>Spike.Extensions.Logging.Sql</PackageId>
+    <PackageTags>logging;logger;sqlserver</PackageTags>
+    <PackageProjectUrl>https://github.com/adnvilla/Spike.Logging</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/adnvilla/Spike.Logging/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/adnvilla/Spike.Logging</RepositoryUrl>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
