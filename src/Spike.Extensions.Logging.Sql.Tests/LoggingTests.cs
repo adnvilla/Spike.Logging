@@ -21,7 +21,7 @@ namespace Spike.Extensions.Logging.Sql.Tests
             var isAppVeyor = Environment.GetEnvironmentVariable("Appveyor")?.ToUpperInvariant() == "TRUE";
             var connString =
                 isAppVeyor
-                    ? @"Server=(local)\SQL2017;Database=tempdb;User ID=sa;Password=Password12!"
+                    ? @"Server=(LocalDb)\MSSQLLocalDB;Database=tempdb;Integrated Security=True"
                     : @"Server=(LocalDb)\MSSQLLocalDB;Database=tempdb;Integrated Security=True";
 
             using (var connection = new SqlConnection(connString))
@@ -37,7 +37,7 @@ namespace Spike.Extensions.Logging.Sql.Tests
 
             connString =
                 isAppVeyor
-                    ? @"Server=(local)\SQL2017;Database=SqlServerTests;User ID=sa;Password=Password12!"
+                    ? @"Server=(LocalDb)\MSSQLLocalDB;Database=SqlServerTests;Integrated Security=True"
                     : @"Server=(LocalDb)\MSSQLLocalDB;Database=SqlServerTests;Integrated Security=True";
 
             _connection = new SqlConnection(connString);
