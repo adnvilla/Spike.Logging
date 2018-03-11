@@ -1,21 +1,6 @@
-﻿version: '{build}'
+﻿version: '0.1.{build}'
 pull_requests:
   do_not_increment_build_number: true
 image: Visual Studio 2017
 services:
   - mssql2017
-nuget:
-  disable_publish_on_pr: true
-build_script:
-- ps: .\Build.ps1
-test: off
-artifacts:
-- path: .\artifacts\*.nupkg
-  name: NuGet
-deploy:
-- provider: NuGet
-  name: production
-  api_key:
-    secure: oy2lrf5lfdamztpaozjq7yz642nkc7vevbo5btyrtkygvq
-  on:
-    appveyor_repo_tag: true
