@@ -36,7 +36,7 @@ echo "build: Tag is $tag"
 echo "build: Package version suffix is $suffix"
 echo "build: Build version suffix is $buildSuffix" 
 
-exec { & dotnet build Respawn.sln -c Release --version-suffix=$buildSuffix -v q /nologo }
+exec { & dotnet build .\src\Spike.Logging.sln -c Release --version-suffix=$buildSuffix -v q /nologo }
 
 if (-Not (Test-Path 'env:APPVEYOR')) {
 	exec { & docker-compose up -d }
@@ -44,27 +44,18 @@ if (-Not (Test-Path 'env:APPVEYOR')) {
 
 try {
 
-	Push-Location -Path .\Respawn.UnitTests
+	Push-Location -Path .\src\Spike.Extensions.Logging.Sql.Tests
 
 	exec { & dotnet xunit -configuration Release --fx-version 2.0.0 }
 } finally {
 	Pop-Location
 }
 
-
-try {
-
-	Push-Location -Path .\Respawn.DatabaseTests
-
-	exec { & dotnet xunit -configuration Release --fx-version 2.0.0 }
-} finally {
-	Pop-Location
-}
 
 if ($suffix -eq "") {
-	exec { & dotnet pack .\Respawn\Respawn.csproj -c Release -o ..\artifacts --include-symbols --no-build }
+	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\artifacts --include-symbols --no-build }
 } else {
-	exec { & dotnet pack .\Respawn\Respawn.csproj -c Release -o ..\artifacts --include-symbols --no-build --version-suffix=$suffix }
+	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\artifacts --include-symbols --no-build --version-suffix=$suffix }
 }
 
 
