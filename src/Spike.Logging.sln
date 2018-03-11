@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spike.Extensions.Logging.Sql", "Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj", "{A1B99AAA-5DEA-43B4-A51D-8DD699035F10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3A14889E-DD31-4BAE-A218-FE6EE2EFFB5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{B663EF98-8E25-45BB-80C4-C6F2596C6E0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spike.Extensions.Logging.Sql.Tests", "Spike.Extensions.Logging.Sql.Tests\Spike.Extensions.Logging.Sql.Tests.csproj", "{B7B35241-366B-4B23-9DA1-05DD11B9FB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSample", "ConsoleSample\ConsoleSample.csproj", "{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B99AAA-5DEA-43B4-A51D-8DD699035F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B99AAA-5DEA-43B4-A51D-8DD699035F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B99AAA-5DEA-43B4-A51D-8DD699035F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B99AAA-5DEA-43B4-A51D-8DD699035F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B35241-366B-4B23-9DA1-05DD11B9FB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B35241-366B-4B23-9DA1-05DD11B9FB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B35241-366B-4B23-9DA1-05DD11B9FB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B35241-366B-4B23-9DA1-05DD11B9FB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7B35241-366B-4B23-9DA1-05DD11B9FB57} = {3A14889E-DD31-4BAE-A218-FE6EE2EFFB5D}
+		{1F2F72CA-222D-4579-8A31-9DD0D5A12DB6} = {B663EF98-8E25-45BB-80C4-C6F2596C6E0B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C26839E-6764-4CD1-9C98-8A34658F5EDC}
+	EndGlobalSection
+EndGlobal
