@@ -69,7 +69,7 @@ namespace Spike.Extensions.Logging.Sql.Tests
         }
 
         [Fact]
-        public async Task ShouldBe()
+        public async Task ShouldBeLogger()
         {
             var logger = SetUp();
 

@@ -15,5 +15,30 @@ namespace Spike.Extensions.Logging.Sql
         {
             return AddSqlServer(factory, (_, logLevel) => logLevel >= minLevel, connectionStr);
         }
+
+
+#if !NETCORE1_0  && !NET45
+
+        public static ILoggingBuilder AddSqlServer(this ILoggingBuilder builder, Func<string, LogLevel, bool> filter = null, string connectionStr = null)
+        {
+            using (var provider = new SqlLoggerProvider(filter, connectionStr))
+            {
+                builder.AddProvider(provider);
+            }
+
+            return builder;
+        }
+
+        public static ILoggingBuilder AddSqlServer(this ILoggingBuilder builder, LogLevel minLevel, string connectionStr)
+        {
+            using (var provider = new SqlLoggerProvider((_, logLevel) => logLevel >= minLevel, connectionStr))
+            {
+                builder.AddProvider(provider);
+            }
+
+            return builder;
+        }
+
+#endif
     }
 }
