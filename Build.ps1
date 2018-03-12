@@ -22,7 +22,7 @@ function Exec
     }
 }
 
-if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
+if(Test-Path .\src\artifacts) { Remove-Item .\src\artifacts -Force -Recurse }
 
 exec { & dotnet restore .\src }
 
@@ -53,9 +53,9 @@ try {
 
 
 if ($suffix -eq "") {
-	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\artifacts --include-symbols --no-build }
+	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\src\artifacts --include-symbols --no-build }
 } else {
-	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\artifacts --include-symbols --no-build --version-suffix=$suffix }
+	exec { & dotnet pack .\src\Spike.Extensions.Logging.Sql\Spike.Extensions.Logging.Sql.csproj -c Release -o ..\src\artifacts --include-symbols --no-build --version-suffix=$suffix }
 }
 
 
