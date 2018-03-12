@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.1.0</Version>
     <Description>Logger for SqlServer</Description>
     <Copyright>Copyright Adrián Villafaña</Copyright>
     <VersionPrefix>0.2.0-preview1</VersionPrefix>
