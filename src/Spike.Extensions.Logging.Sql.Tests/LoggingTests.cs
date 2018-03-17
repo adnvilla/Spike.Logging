@@ -2,7 +2,6 @@ using Microsoft.Extensions.Logging;
 using NPoco;
 using Respawn;
 using Shouldly;
-using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Xunit;
@@ -18,11 +17,7 @@ namespace Spike.Extensions.Logging.Sql.Tests
 
         public async Task InitializeAsync()
         {
-            var isAppVeyor = Environment.GetEnvironmentVariable("Appveyor")?.ToUpperInvariant() == "TRUE";
-            var connString =
-                isAppVeyor
-                    ? @"Server=(LocalDb)\MSSQLLocalDB;Database=tempdb;Integrated Security=True"
-                    : @"Server=(LocalDb)\MSSQLLocalDB;Database=tempdb;Integrated Security=True";
+            var connString = @"Server=(LocalDb)\MSSQLLocalDB;Database=tempdb;Integrated Security=True";
 
             using (var connection = new SqlConnection(connString))
             {
@@ -35,10 +30,7 @@ namespace Spike.Extensions.Logging.Sql.Tests
                 }
             }
 
-            connString =
-                isAppVeyor
-                    ? @"Server=(LocalDb)\MSSQLLocalDB;Database=SqlServerTests;Integrated Security=True"
-                    : @"Server=(LocalDb)\MSSQLLocalDB;Database=SqlServerTests;Integrated Security=True";
+            connString = @"Server=(LocalDb)\MSSQLLocalDB;Database=SqlServerTests;Integrated Security=True";
 
             _connection = new SqlConnection(connString);
             _connection.Open();
