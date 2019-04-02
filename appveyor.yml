@@ -21,6 +21,9 @@ deploy:
 - provider: NuGet
   name: production
   api_key:
-    secure: I8MDsKJSklOf0CRkxE+6RSwmkwGjOpiQGmJohTRtbNInFCdFmwTBA73UsRuUmABx
+    secure: oy2kyaky4qdbou7qvxrqwfbhne2d5evetnpajlxgnb5d7u
   on:
     appveyor_repo_tag: true
+on_success:
+- curl -s -o copilot https://copilot.blackducksoftware.com/ci/appveyor/scripts/upload
+- bash copilot
