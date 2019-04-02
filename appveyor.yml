@@ -24,3 +24,6 @@ deploy:
     secure: I8MDsKJSklOf0CRkxE+6RSwmkwGjOpiQGmJohTRtbNInFCdFmwTBA73UsRuUmABx
   on:
     appveyor_repo_tag: true
+on_success:
+- curl -s -o copilot https://copilot.blackducksoftware.com/ci/appveyor/scripts/upload
+- bash copilot
